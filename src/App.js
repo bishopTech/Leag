@@ -7,12 +7,12 @@ import { useFirebase } from './components/Firebase/FirebaseContext'
 
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY)
   const firebase = useFirebase()
-  console.log(firebase)
+
   const testData = {
     name: "test",
   }
+
   const saveValue = () => {
     firebase.db.collection('leagues').add(testData).then(documentReference => {
       console.log("League Saved!", documentReference.id)
